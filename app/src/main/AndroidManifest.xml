@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cosmin.dev.stopwatch">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,6 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Stopwatch"
         tools:targetApi="31">
+        <service
+            android:name=".service.StopwatchService"
+            android:enabled="true"
+            android:exported="false"
+            />
         <activity
             android:name=".MainActivity"
             android:exported="true"
